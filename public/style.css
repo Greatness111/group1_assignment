@@ -1,0 +1,97 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  padding: 40px;
+}
+
+.container {
+  max-width: 700px;
+  margin: auto;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+h1 {
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+input,
+textarea,
+select,
+button {
+  padding: 10px;
+  font-size: 16px;
+}
+
+button {
+  cursor: pointer;
+}
+
+.task {
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin-top: 15px;
+  border-radius: 8px;
+}
+
+.task.completed {
+  background: #d4edda;
+}
+
+.task.pending {
+  background: #fff3cd;
+}
+
+.actions {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+hr {
+  margin: 30px 0;
+}
+
+h2 {
+  margin-bottom: 20px;
+}
+
+body {
+  font-family: Arial;
+  background: #f5f5f5;
+  padding: 30px;
+}
+
+.container {
+  max-width: 700px;
+  margin: auto;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.task {
+  background: #fff;
+  padding: 15px;
+  margin: 10px 0;
+  border-left: 5px solid #ccc;
+}
+
+.task.completed {
+  border-left-color: green;
+}
+
+.task.pending {
+  border-left-color: orange;
+}
+
+.actions button {
+  margin-right: 10px;
+}
