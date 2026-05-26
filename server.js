@@ -92,7 +92,7 @@ app.patch('/tasks/:id', (req, res) => {
   // Update only the fields that were provided in the request body
   if (req.body.title !== undefined) taskToUpdate.title = req.body.title;
   if (req.body.description !== undefined) taskToUpdate.description = req.body.description;
-  if (req.body.completed !== undefined) taskToUpdate.completed = req.body.completed;
+  taskToUpdate.status = req.body.status;
 
   // Respond with the updated task
   res.status(200).json({ message: "Task updated successfully", task: taskToUpdate });
