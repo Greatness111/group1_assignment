@@ -71,7 +71,7 @@ app.post('/tasks', validateTask, (req, res)=>{
    }
 
    tasks.push(newTask)
-   
+
    // push object into tasks.js
    saveTasksToFile(tasks)
    // Return response status 201 showing new task added
@@ -131,21 +131,33 @@ app.patch('/tasks/:id', (req, res) => {
 
 // Delete task
 app.delete('/tasks/:id', (req, res) => {
-    const id = parseInt(req.params.id)
-    const initialLength = tasks.length
-    
-    const newTasks = tasks.filter(t => t.id !== id);
-    if(newTasks.length === initialLength){
-        res.json({message:"Task not deleted"})
+    const id = parseInt(req.params.id, 10);
+    const taskIndex = tasks.findIndex(task => task.id === id);
+
+    // Task not found
+    if (taskIndex === -1) {
+        return res.status(404).json({
+            message: "Task not found"
+        });
     }
-    // Reassign all IDs sequentially
-    newTasks.forEach((task, index) => {
-        task.id = index + 1;  // IDs become 1, 2, 3...
-    })
-    saveTasksToFile(newTasks);
-    console.log("Task deleted successfully")
-    res.status(204).json({message:"Task deleted successfully"})
-})
+
+    tasks.splice(taskIndex, 1);
+
+    // Reassign IDs sequentially
+    tasks.forEach((task, index) => {
+        task.id = index + 1;
+    });
+
+    // Save updated tasks
+    saveTasksToFile(tasks);
+
+    console.log("Task deleted successfully");
+
+    return res.status(200).json({
+        message: "Task deleted successfully",
+        tasks
+    });
+});
 
 
 //Error handling

@@ -1,15 +1,13 @@
 {
   "info": {
-    "_postman_id": "e86ea642-6380-4f6e-9a75-05e8ec84bf63",
-    "name": "BeTechifie_Group1A",
-    "description": "BeTechified Group 1A Project",
+    "_postman_id": "5c8a99c3-e1db-4654-a03e-d2e50ac2fe73",
+    "name": "Task Manager API Group 1(A)",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-    "_exporter_id": "19625607",
-    "_collection_link": "https://go.postman.co/collection/19625607-e86ea642-6380-4f6e-9a75-05e8ec84bf63?source=collection_link"
+    "_exporter_id": "35135182"
   },
   "item": [
     {
-      "name": "GetAllTasks",
+      "name": "Get all tasks",
       "request": {
         "method": "GET",
         "header": [],
@@ -23,18 +21,17 @@
           "path": [
             "tasks"
           ]
-        },
-        "description": "Get all tasks"
+        }
       },
       "response": []
     },
     {
-      "name": "GetTask",
+      "name": "Get task by ID",
       "request": {
         "method": "GET",
         "header": [],
         "url": {
-          "raw": "http://localhost:3000/tasks/2",
+          "raw": "http://localhost:3000/tasks/1",
           "protocol": "http",
           "host": [
             "localhost"
@@ -42,51 +39,20 @@
           "port": "3000",
           "path": [
             "tasks",
-            "2"
+            "1"
           ]
-        },
-        "description": "Get single task"
+        }
       },
       "response": []
     },
     {
-      "name": "UpdateTasks",
-      "request": {
-        "method": "PUT",
-        "header": [],
-        "body": {
-          "mode": "raw",
-          "raw": "{\n    \"id\": 2,\n    \"title\": \"Study Node.js\",\n    \"description\": \"Read middleware and validations documentation\",\n    \"status\": \"completed\"\n }",
-          "options": {
-            "raw": {
-              "language": "json"
-            }
-          }
-        },
-        "url": {
-          "raw": "http://localhost:3000/tasks/2",
-          "protocol": "http",
-          "host": [
-            "localhost"
-          ],
-          "port": "3000",
-          "path": [
-            "tasks",
-            "2"
-          ]
-        },
-        "description": "Update entire resource"
-      },
-      "response": []
-    },
-    {
-      "name": "CreateTask",
+      "name": "Create task",
       "request": {
         "method": "POST",
         "header": [],
         "body": {
           "mode": "raw",
-          "raw": "{\n    \"title\":\"BeTechified Project\",\n    \"description\":\"Round off the project\",\n    \"status\":\"pending\"\n}",
+          "raw": "{\r\n  \"title\": \"Submit project\",\r\n  \"description\": \"Complete and submit group project\",\r\n  \"status\": \"pending\"\r\n}",
           "options": {
             "raw": {
               "language": "json"
@@ -94,27 +60,28 @@
           }
         },
         "url": {
-          "raw": "localhost:3000/tasks",
+          "raw": "http://localhost:3000/tasks/",
+          "protocol": "http",
           "host": [
             "localhost"
           ],
           "port": "3000",
           "path": [
-            "tasks"
+            "tasks",
+            ""
           ]
-        },
-        "description": "Create task"
+        }
       },
       "response": []
     },
     {
-      "name": "UpdateSingleEntry",
+      "name": "Update task",
       "request": {
-        "method": "PATCH",
+        "method": "PUT",
         "header": [],
         "body": {
           "mode": "raw",
-          "raw": "{\n    \"status\":\"completed\"\n}",
+          "raw": "{\r\n  \"title\": \"Submit project\",\r\n  \"description\": \"Complete and submit group project\",\r\n  \"status\": \"completed\"\r\n}",
           "options": {
             "raw": {
               "language": "json"
@@ -122,7 +89,7 @@
           }
         },
         "url": {
-          "raw": "http://localhost:3000/tasks/3",
+          "raw": "http://localhost:3000/tasks/6",
           "protocol": "http",
           "host": [
             "localhost"
@@ -130,20 +97,23 @@
           "port": "3000",
           "path": [
             "tasks",
-            "3"
+            "6"
           ]
-        },
-        "description": "Update single entry in task"
+        }
       },
       "response": []
     },
     {
-      "name": "DeleteTask",
+      "name": "Delete task",
       "request": {
         "method": "DELETE",
         "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"title\": \"Submit project\",\r\n  \"description\": \"Complete and submit group project\",\r\n  \"status\": \"completed\"\r\n}"
+        },
         "url": {
-          "raw": "http://localhost:3000/tasks/5",
+          "raw": "http://localhost:3000/tasks/6",
           "protocol": "http",
           "host": [
             "localhost"
@@ -151,10 +121,9 @@
           "port": "3000",
           "path": [
             "tasks",
-            "5"
+            "6"
           ]
-        },
-        "description": "Delete Task"
+        }
       },
       "response": []
     }
