@@ -29,12 +29,6 @@ const tasks = [
     "title": "BeTechified ToDo Project",
     "description": "Round off the project",
     "status": "cancelled"
-  },
-  {
-    "id": 5,
-    "title": "BeTechified Project",
-    "description": "Round off the project",
-    "status": "pending"
   }
 ];
 
