@@ -31,22 +31,30 @@ It also includes a simple frontend interface to test all API endpoints.
 # 📁 Project Structure
 
 ```
-project/
-│
-├── data/
-│   └── tasks.js
-│
-├── middleware/
-│   └── validateTaskUpdate.js
-│
-├── public/
-│   ├── index.html
-│   ├── style.css
-│   └── script.js
-│
-├── server.js
-├── package.json
-└── README.md
+group1_assignment/
+|-- data
+|   `-- task.js
+|-- middleware
+|   `-- validateTask.js
+|-- public
+|   |-- index.html
+|   |-- script.js
+|   `-- style.css
+`-- testing-screenshots
+    |-- VSCode.png
+    |-- create-task.png
+    |-- delete-task.png
+    |-- get-all-tasks.png
+    |-- get-task.png
+    |-- update-single-entry.png
+    |-- update-task.png
+    `-- validate.png
+|-- BeTechifie_Group1A.postman_collection.json
+|-- package-lock.json
+|-- package.json
+|-- README.md
+|-- saveTaskToFile.js
+|-- server.js
 ```
 
 ---
