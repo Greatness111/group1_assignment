@@ -1,4 +1,4 @@
-function validateTaskUpdate(req, res, next) {
+function validateTask(req, res, next) {
 
   const { title, description, status } = req.body;
 
@@ -14,7 +14,7 @@ function validateTaskUpdate(req, res, next) {
     });
   }
 
-  const validStatus = ["pending", "completed"];
+  const validStatus = ["cancelled", "in-progress", "pending", "completed"];
 
   if (status !== undefined && !validStatus.includes(status)) {
     return res.status(400).json({
@@ -25,4 +25,4 @@ function validateTaskUpdate(req, res, next) {
   next();
 }
 
-module.exports = validateTaskUpdate;
+module.exports = validateTask;

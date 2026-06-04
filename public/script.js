@@ -1,5 +1,4 @@
-
-const API_URL = "http://localhost:3000/tasks";
+const API_URL = `http://localhost:3000/tasks`;
 
 const taskList = document.getElementById("taskList");
 const taskForm = document.getElementById("taskForm");
@@ -119,11 +118,15 @@ function resetForm() {
 
 // DELETE TASK
 async function deleteTask(id) {
-  await fetch(`${API_URL}/${id}`, {
+  const res = await fetch(`${API_URL}/${id}`, {
     method: "DELETE"
   });
 
-  loadTasks();
+  if(res.ok){
+    alert("Task deleted successfully")
+    loadTasks();
+  }
+  window.location.reload();
 }
 
 // INITIAL LOAD

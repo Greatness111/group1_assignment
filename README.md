@@ -10,7 +10,7 @@ It also includes a simple frontend interface to test all API endpoints.
 - Create tasks
 - Get all tasks
 - Get single task by ID
-- Update tasks (PUT)
+- Update tasks (PUT / PATCH)
 - Delete tasks
 - Frontend UI for testing API
 - Form-based task editing (update mode)
@@ -143,7 +143,7 @@ The frontend (`/public`) allows you to:
 - View all tasks
 - Click **Edit** to load task into form
 - Switch to **Update mode**
-- Submit changes using PUT request
+- Submit changes using PATCH request
 - Automatically refresh task list
 - Delete tasks
 
@@ -218,7 +218,7 @@ http://localhost:3000
 | Member 1 | Server setup |
 | Member 2 | GET routes |
 | Member 3 | POST route + validation |
-| Member 4 | PUT route + update functionality |
+| Member 4 | PATCH route + update functionality |
 | Member 5 | DELETE route + error handling |
 | Member 6 | Frontend testing + Postman + documentation |
 
