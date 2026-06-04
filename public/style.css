@@ -49,6 +49,15 @@ button {
   background: #fff3cd;
 }
 
+.task.in-progress {
+  background: #c03ecf;
+}
+
+.task.cancelled {
+  background: #e11814;
+}
+
+
 .actions {
   margin-top: 10px;
   display: flex;
